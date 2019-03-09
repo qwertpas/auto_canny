@@ -57,7 +57,7 @@ while(True):
     mask = cv2.dilate(cv2.inRange(cv2.bilateralFilter(hsv,9,75,75), (30, 90, 150), (40, 255, 255)), None, iterations=0)
     cv2.imshow("mask", mask)
 
-    _, contours, __ = cv2.findContours(mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)  # find contours in the image
+    contours, __ = cv2.findContours(mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)  # find contours in the image
 
 
     if len(contours) > 0:

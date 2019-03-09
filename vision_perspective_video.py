@@ -148,7 +148,7 @@ def getTargetPixelCoords(img):
 
     cv2.imshow("img", img)
     cv2.imshow("mask", mask)
-    _, contours, __ = cv2.findContours(res, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)  # find contours in the image
+    contours, __ = cv2.findContours(res, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)  # find contours in the image
 
     if len(contours) > 1:
         contours = sort_contours(contours)[0]
